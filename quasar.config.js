@@ -30,7 +30,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
-    boot: ['i18n', 'axios'],
+    boot: ['i18n', 'axios', 'global'],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
     css: ['app.scss'],
@@ -98,8 +98,10 @@ module.exports = configure(function (ctx) {
       // components: [],
       // directives: [],
 
+      cssAddon: true,
+
       // Quasar plugins
-      plugins: [],
+      plugins: ['Notify', 'Dialog', 'Loading', 'LoadingBar', 'LocalStorage', 'SessionStorage'],
     },
 
     // animations: 'all', // --- includes all animations

@@ -1,0 +1,38 @@
+%container {
+  margin: 0 auto;
+  width: $screen-container;
+
+  @media screen and (max-width: $screen-container) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: $breakpoint-sm-max) {
+    width: 93vw;
+  }
+}
+
+.container {
+  @extend %container;
+}
+
+%header-height {
+  padding-top: $nav-height;
+
+  @media screen and (max-width: $screen-container) {
+    padding-top: $nav-min-height;
+  }
+
+  @media screen and (max-width: $breakpoint-sm-max) {
+    // Fix breadcrumb
+    padding-top: calc(20px + #{$nav-mobile-height});
+  }
+}
+
+.header-height {
+  @extend %header-height;
+}
+
+.container-nav {
+  @extend %header-height;
+  @extend %container;
+}

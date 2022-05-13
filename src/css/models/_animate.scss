@@ -1,0 +1,31 @@
+/**
+  Add global transition styles to selector
+  @param string
+  @default all | 235ms | ease-in-out | 0
+*/
+@mixin transition($name: all, $duration: 0.183s, $animation: ease-in-out, $delay: 0s) {
+  -webkit-transition: $name $duration $animation $delay;
+  -ms-transition: $name $duration $animation $delay;
+  -moz-transition: $name $duration $animation $delay;
+  -o-transition: $name $duration $animation $delay;
+  transition: $name $duration $animation $delay;
+}
+
+/**
+  Add global transform styles to selector
+*/
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -ms-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-origin($x, $y) {
+  -webkit-transform-origin: $x $y;
+  -ms-transform-origin: $x $y;
+  -moz-transform-origin: $x $y;
+  -o-transform-origin: $x $y;
+  transform-origin: $x $y;
+}

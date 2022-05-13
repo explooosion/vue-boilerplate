@@ -1,1 +1,27 @@
 // app global css in SCSS form
+@import './reset/a';
+@import './reset/ul';
+
+@import './components/layout';
+@import './components/screen';
+@import './components/text';
+
+@import './models/animate';
+@import './models/font';
+@import './models/screen';
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: $font-global;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
