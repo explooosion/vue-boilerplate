@@ -9,10 +9,19 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "build:pwa": "quasar build -m pwa",
-    "lint": "eslint --ext .js,.ts,.vue ./",
-    "stylelint": "stylelint ./*.{vue,css,sass,scss}",
+    "eslint": "eslint --ext .ts,.js,.vue src",
+    "eslint:fix": "eslint --ext .ts,.js,.vue src --fix",
+    "stylelint": "stylelint src/**/**/**/*.{vue,css,sass,scss}",
+    "stylelint:fix": "stylelint src/**/**/**/*.{vue,css,sass,scss} --fix",
+    "lint:all": "npm run eslint && npm run stylelint",
+    "lint:all:fix": "npm run eslint:fix && npm run stylelint:fix",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:all:fix && npm run format"
+    }
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
